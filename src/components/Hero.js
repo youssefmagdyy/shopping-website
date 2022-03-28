@@ -5,7 +5,24 @@ import heroBcg from '../assets/hero-bcg.jpeg'
 import heroBcg2 from '../assets/hero-bcg-2.jpeg'
 
 const Hero = () => {
-  return <h4>hero</h4>
+  return <Wrapper className='section-center'>
+    <article className='content'>
+      <h1>
+        Find your <br/>
+        Comfort Zone
+      </h1>
+      <p>
+        Qui quis ex laborum magna anim elit non voluptate magna sunt officia nulla veniam.
+      </p>
+      <Link to='/products' className='btn hero-btn'>
+        Start Now
+      </Link>
+    </article>
+    <article className='img-container'>
+      <img src={heroBcg} alt='' className='main-img'/>
+      <img src={heroBcg2} alt='' className='accent-img'/>
+    </article>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
