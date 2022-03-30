@@ -20,7 +20,7 @@ const products_reducer = (state, action) => {
   if(action.type === SIDEBAR_CLOSE)
   {
     console.log(action.type)
-    return {...state, isSideBarOpen:false}
+    return {...state, isSideBarOpen: false}
   }
 
   if(action.type === GET_PRODUCTS_BEGIN)
@@ -29,10 +29,28 @@ const products_reducer = (state, action) => {
     return {...state, productsLoading:true}
   }
 
+  if(action.type === GET_SINGLE_PRODUCT_BEGIN)
+  { 
+    console.log(action.type)
+    return {...state, singleLoading:true,singleError:false}
+  }
+
+  if(action.type === GET_SINGLE_PRODUCT_SUCCESS)
+  { 
+    console.log(action.type)
+    return {...state, product:action.payload,singleLoading:false,singleError:false}
+  }
+
+  if(action.type === GET_SINGLE_PRODUCT_ERROR)
+  { 
+    console.log(action.type)
+    return {...state,singleLoading:false,singleError:true}
+  }
+
   if(action.type === GET_PRODUCTS_SUCCESS)
   {
     console.log(action.type)
-    const featured = action.payload.filter((product)=> product.featured == true)
+    const featured = action.payload.filter((product)=> product.featured === true)
 
     return {...state, productsLoading:false,featured:featured,products:action.payload}
   }
@@ -40,7 +58,7 @@ const products_reducer = (state, action) => {
   if(action.type === GET_PRODUCTS_ERROR)
   { 
     console.log(action.type)
-    return {...state, productsLoading:false, productError:true}
+    return {...state, productsLoading:false, productsError:true}
   }
 
   throw new Error(`No Matching "${action.type}" - action type`)

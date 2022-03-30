@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaShoppingCart, FaUserMinus, FaUserPlus } from 'react-icons/fa'
+import { FaShoppingCart, FaUserMinus, FaUser } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { useProductsContext } from '../context/products_context'
@@ -11,16 +11,15 @@ const CartButtons = () => {
   return (
     <Wrapper className='cart-btn-wrapper'>
       <Link onClick={closeSidebar} to='/cart' className='cart-btn' >
-      Cart
       <span className='cart-container'>
         <FaShoppingCart/>
         <span className='cart-value'>
-          12
+          3
         </span>
       </span>
       </Link>
       <button type='button' className='auth-btn'>
-        Login <FaUserPlus/>
+        <FaUser/>
       </button>
     </Wrapper>
   )
@@ -30,7 +29,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  width: 225px;
+  width: 125px;
 
   .cart-btn {
     color: var(--clr-grey-1);

@@ -5,7 +5,54 @@ import { getUniqueValues, formatPrice } from '../utils/helpers'
 import { FaCheck } from 'react-icons/fa'
 
 const Filters = () => {
-  return <h4>filters</h4>
+  const {filters:{text,category,color,price,company,minPrice,maxPrice,shipping},updateFilters,clearFilters, allProducts} = useFilterContext();
+  const categories = getUniqueValues(allProducts,'category')
+  const companies = getUniqueValues(allProducts,'company')
+  const colors = getUniqueValues(allProducts,'colors')
+
+  return <Wrapper>
+    <div className='content'>
+      <form onSubmit={(e)=> e.preventDefault()}>
+        <div className='form-control'>
+          <input type='text' name='text' placeholder='search' className='search-input' value={text} onChange={updateFilters}>
+          </input>
+        </div>
+      <div className='form-control'>
+        <h5>Category</h5>
+        <div>
+          {categories.map((c,index)=>{return(<button key={index} onClick={updateFilters} name='category' type='button' className={`${category.toLowerCase() === c.toLowerCase()?'active':null}`}>{c}</button>)})}
+        </div>
+      </div>
+      <div className='form-control'>
+        <h5>Company</h5>
+        <select name='company' value={company} onChange={updateFilters} className='company'>
+          {companies.map((c,index)=>{return(
+            <option key={index} value={c}>
+              {c.toUpperCase()}
+            </option>
+          )})}
+        </select>
+      </div>
+      <div className='form-control'>
+        <h5>
+          Colors
+        </h5>
+        <div className='colors'>
+          {colors.map((c,index)=>{
+            if(c==='all')
+            {
+              return <button key={index} name='color' onClick={updateFilters} data-color='all' className={`${color=='all'? 'all-btn active':'all-btn'}`}>
+                All
+              </button>
+            }
+            return <button onClick={updateFilters} key={index} name='color'style={{background:c}} className={`${color===c? 'color-btn active': 'color-btn'}`} data-color={c}>
+            {color===c?  <FaCheck/>:null}
+          </button>})}
+        </div>
+      </div>
+      </form>
+    </div>
+  </Wrapper>
 }
 
 const Wrapper = styled.section`
