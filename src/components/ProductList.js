@@ -9,7 +9,7 @@ const ProductList = () => {
   if(products.length < 1)
   {
     return <h5 style={{textTransform:'none'}}>
-      No match...
+      Empty...
     </h5>
   }
   if(gridView === false)

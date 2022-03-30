@@ -15,7 +15,7 @@ const filter_reducer = (state, action) => {
     let maxPrice = action.payload.map((p)=>{return p.price})
     maxPrice = Math.max(...maxPrice)
     console.log(action.type)
-    return {...state,allProducts:[...action.payload],filteredProducts:[...action.payload], filters:{...state.filters,maxPrice:maxPrice}}
+    return {...state,allProducts:[...action.payload],filteredProducts:[...action.payload], filters:{...state.filters,price:maxPrice,maxPrice:maxPrice}}
   }
 
   if(action.type === UPDATE_SORT)
@@ -102,6 +102,7 @@ const filter_reducer = (state, action) => {
     }
 
     tempProducts = tempProducts.filter((p)=> p.price <= price)
+    
     return {...state,filteredProducts:tempProducts}
   }
 
