@@ -71,7 +71,52 @@ const filter_reducer = (state, action) => {
   if(action.type === FILTER_PRODUCTS)
   {
     console.log(action.type)
-    return{...state}
+    const {allProducts} =state
+    const {text,category,company,color,shipping,price} = state.filters
+    let tempProducts = [...allProducts]
+
+    if(text)
+    {
+      tempProducts = tempProducts.filter((p)=>{
+        return p.name.toLowerCase().startsWith(text)
+      })
+    }
+    if(category!=='all')
+    {
+      tempProducts = tempProducts.filter((p)=>p.category === category)
+    }
+
+    if(company!=='all')
+    {
+      tempProducts = tempProducts.filter((p)=>p.company === company)
+    }
+
+    if(color !='all')
+    {
+      tempProducts = tempProducts.filter((p)=>{return p.colors.find((c)=>c=== color)})
+    }
+
+    if(shipping)
+    {
+      tempProducts = tempProducts.filter((p)=>p.shipping === true)
+    }
+
+    tempProducts = tempProducts.filter((p)=> p.price <= price)
+    return {...state,filteredProducts:tempProducts}
+  }
+
+  if(action.type === CLEAR_FILTERS)
+  {
+    console.log(action.type)
+    return{...state,filters:{
+      ...state.filters,
+      text:'',
+      company:'all',
+      category:'all',
+      color:'all',
+      price:state.filters.maxPrice,
+      shipping:false,
+    }}
   }
 
 

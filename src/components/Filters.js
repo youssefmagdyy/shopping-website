@@ -50,8 +50,27 @@ const Filters = () => {
           </button>})}
         </div>
       </div>
+      <div className='form-control'>
+        <h5>
+          Price
+        </h5>
+        <p className='price'>
+          {formatPrice(price)}
+        </p>
+        <input type='range' name='price' onChange={updateFilters} min={minPrice} max={maxPrice} value={price}>
+        </input>
+      </div>
+      <div className='form-control shipping'>
+        <label htmlFor='shipping'>
+          Free shipping
+        </label>
+        <input type='checkbox' name='shipping' id='shipping' onChange={updateFilters} checked={shipping}></input>
+      </div>
       </form>
-    </div>
+      <button type='button' className='clear-btn' onClick={clearFilters}>
+        Clear filters
+      </button>
+      </div>
   </Wrapper>
 }
 
