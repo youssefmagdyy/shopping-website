@@ -69,6 +69,7 @@ export const FilterProvider = ({ children }) => {
     {
       value = e.target.checked
     }
+    
     dispatch({type:UPDATE_FILTERS,payload:{name,value}})
   }
 

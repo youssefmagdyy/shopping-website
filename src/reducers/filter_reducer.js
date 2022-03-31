@@ -91,7 +91,7 @@ const filter_reducer = (state, action) => {
       tempProducts = tempProducts.filter((p)=>p.company === company)
     }
 
-    if(color !='all')
+    if(color !=='all')
     {
       tempProducts = tempProducts.filter((p)=>{return p.colors.find((c)=>c=== color)})
     }
