@@ -10,17 +10,18 @@ const ListView = ({products}) => {
          <Link to={`/products/${id}`} className='link'>
          <img src={image} alt={name}></img>
       </Link>
-         <div>  
+         <div> 
+         <Link to={`/products/${id}`}> 
            <h4>
              {name}
            </h4>
+           </Link>
            <h5 className='price'>
              {formatPrice(price)}
            </h5>
            <p>
              {description.substring(0,150)}...
            </p>
-           <Link to={`/products/${id}`} className='btn'> View Details</Link>
          </div>
        </article>)
      })}
@@ -30,6 +31,17 @@ const ListView = ({products}) => {
 const Wrapper = styled.section`
   display: grid;
   row-gap: 3rem;
+
+  h4 {
+    color:black
+  }
+
+  article:hover {
+    h4 {
+      text-decoration: underline;
+      cursor:pointer;
+    }
+  }
 
   img {
     width: 100%;
