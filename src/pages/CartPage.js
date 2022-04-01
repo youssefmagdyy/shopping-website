@@ -13,6 +13,7 @@ const CartPage = () => {
         <h2>
           Cart is empty...
         </h2>
+        
         <Link to='/products' className='btn'>
           Continue Shopping
         </Link>
@@ -31,7 +32,7 @@ const Wrapper = styled.main`
   .empty {
     text-align: center;
     h2 {
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       text-transform: none;
     }
   }

@@ -3,15 +3,20 @@ import styled from 'styled-components'
 import { useFilterContext } from '../context/filter_context'
 import { getUniqueValues, formatPrice } from '../utils/helpers'
 import { FaCheck } from 'react-icons/fa'
+import { useState } from 'react'
 
 const Filters = () => {
   const {filters:{text,category,color,price,company,minPrice,maxPrice,shipping},updateFilters,clearFilters, allProducts} = useFilterContext();
   const categories = getUniqueValues(allProducts,'category')
   const companies = getUniqueValues(allProducts,'company')
   const colors = getUniqueValues(allProducts,'colors')
+  const [show,setShow] = useState(false);
 
   return <Wrapper>
-    <div className='content'>
+     <button type='button' onClick={()=>{setShow(!show)}}>
+        {show ? 'Hide filters':'Show filters'}
+      </button>
+    {show && <div className='content'>
       <form onSubmit={(e)=> e.preventDefault()}>
         <div className='form-control'>
           <input type='text' name='text' placeholder='search' className='search-input' value={text} onChange={updateFilters}>
@@ -70,13 +75,14 @@ const Filters = () => {
       <button type='button' className='clear-btn' onClick={clearFilters}>
         Clear filters
       </button>
-      </div>
+      </div>}
   </Wrapper>
 }
 
 const Wrapper = styled.section`
   .form-control {
     margin-bottom: 1.25rem;
+    margin-top: 1rem;
     h5 {
       margin-bottom: 0.5rem;
     }

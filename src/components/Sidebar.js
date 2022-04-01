@@ -26,12 +26,6 @@ const Sidebar = () => {
             {link.text}
           </Link>
         </li>})}
-        <li>
-          <Link onClick={closeSideBar} to='/checkout'>
-            Checkout
-          </Link>
-        </li>
-      
       </ul>
       <CartButtons/>
     </aside>
