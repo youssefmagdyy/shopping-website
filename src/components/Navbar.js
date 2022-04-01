@@ -14,7 +14,7 @@ const {openSideBar} = useProductsContext()
     <div className='nav-center'>
       <div className='nav-header'>
         <Link to='/'>
-        <h4 style={{color:'blue'}}>Logo</h4>
+        <h4 >Furniture Land</h4>
         </Link>
         <button type='button' className='nav-toggle' onClick={openSideBar}>
           <FaBars/>

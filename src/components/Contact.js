@@ -11,14 +11,14 @@ const Contact = () => {
         <p>
           Consequat fugiat duis dolore ad laboris magna excepteur aute Lorem est reprehenderit do reprehenderit.
         </p>
-        <form className='contact-form'>
+      </div>
+      <form className='contact-form'>
           <input type='email' className='form-input' placeholder='Enter Email'>
           </input>
-          <button type='submit' className='submit-btn'>
+          <button type='submit' className='btn hero-btn'>
             subscribe
           </button>
         </form>
-      </div>
     </div>
   </Wrapper>
 }
@@ -33,6 +33,7 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
   }
   .contact-form {
+    margin-top: 1.5rem;
     width: 55vw;
     max-width: 55px;
     display: grid;
@@ -42,8 +43,11 @@ const Wrapper = styled.section`
   .form-input,
   .submit-btn {
     font-size: 1rem;
-    padding: 0.5rem 1rem;
-    border: 2px solid var(--clr-black);
+    padding: 0.5rem;
+    background: var(--clr-grey-10);
+    border-radius: var(--radius);
+    border-color: transparent;
+    letter-spacing: var(--spacing);
   }
   .form-input {
     border-right: none;

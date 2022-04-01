@@ -9,7 +9,7 @@ const CheckoutPage = () => {
   return <Wrapper className='page-100'>
   <section>
     <h3>
-      Order Placed
+      Thank you for your business
     </h3>
     <Link to='/' className='btn'>
         Back to Homepage
