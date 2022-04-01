@@ -33,8 +33,8 @@ const Wrapper = styled.section`
     color: var(--clr-grey-5);
   }
   .contact-form {
-    width: 75vw;
-    max-width: 500px;
+    width: 55vw;
+    max-width: 55px;
     display: grid;
     grid-template-columns: 1fr auto;
   }
