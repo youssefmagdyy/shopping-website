@@ -13,8 +13,8 @@ const Sidebar = () => {
   <SidebarContainer>
     <aside className={`${isSideBarOpen ? 'sidebar show-sidebar' :'sidebar'}`}>
       <div className='sidebar-header'>
-        <h4 style={{color:'blue'}}>
-          Logo
+        <h4>
+          Furniture Land
         </h4>
         <button className='close-btn' type='button' onClick={closeSideBar}>
           <FaTimes/>
@@ -40,6 +40,13 @@ const SidebarContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
+  }
+
+  h4 
+  {
+    margin-top: 1.2rem;
+    font-family: Lucida Handwriting, cursive;
+    color: var(--clr-primary-5);
   }
   .close-btn {
     font-size: 2rem;
