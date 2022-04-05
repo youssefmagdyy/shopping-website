@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useFilterContext } from '../context/filter_context'
 import { getUniqueValues, formatPrice } from '../utils/helpers'
-import { FaCheck } from 'react-icons/fa'
+import { FaCheck ,FaArrowUp, FaArrowDown} from 'react-icons/fa'
 import { useState } from 'react'
 
 const Filters = () => {
@@ -14,7 +14,8 @@ const Filters = () => {
 
   return <Wrapper>
      <button type='button' onClick={()=>{setShow(!show)}}>
-        {show ? 'Hide filters':'Show filters'}
+        {show ? 'Hide filters ':'Show filters '}
+        {show ? <FaArrowUp/> : <FaArrowDown/>}
       </button>
     {show && <div className='content'>
       <form onSubmit={(e)=> e.preventDefault()}>

@@ -44,6 +44,11 @@ const NavContainer = styled.nav`
   align-items: center;
   justify-content: center;
 
+  h4 
+  {
+    font-family: Lucida Handwriting, cursive;
+    color: var(--clr-primary-5);
+  }
   .nav-center {
     width: 90vw;
     margin: 0 auto;

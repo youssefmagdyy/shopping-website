@@ -16,7 +16,7 @@ const Contact = () => {
           <input type='email' className='form-input' placeholder='Enter Email'>
           </input>
           <button type='submit' className='btn hero-btn'>
-            subscribe
+            sub
           </button>
         </form>
     </div>
