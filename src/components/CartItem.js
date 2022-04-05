@@ -68,11 +68,7 @@ const Wrapper = styled.article`
     gap: 1rem;
   }
   img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    border-radius: var(--radius);
-    object-fit: cover;
+  display:none;
   }
   h5 {
     font-size: 0.75rem;
@@ -136,6 +132,14 @@ const Wrapper = styled.article`
     }
     .price-small {
       display: none;
+    }
+    img
+    {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border-radius: var(--radius);
+      object-fit: cover;
     }
     .price {
       display: block;
