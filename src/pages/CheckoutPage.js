@@ -8,9 +8,10 @@ import { Link } from 'react-router-dom'
 const CheckoutPage = () => {
   return <Wrapper className='page-100'>
   <section>
-    <h3>
-      Thank you for your business
-    </h3>
+    <h3>Order placed</h3>
+    <h4>
+    Thank you for your business.
+    </h4>
     <Link to='/' className='btn'>
         Back to Homepage
     </Link>
@@ -27,6 +28,10 @@ const Wrapper = styled.main`
     font-size: 10rem;
   }
   h3 {
+    text-transform: none;
+    margin-bottom: 2rem;
+  }
+  h4 {
     text-transform: none;
     margin-bottom: 2rem;
   }
