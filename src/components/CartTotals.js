@@ -42,12 +42,6 @@ const Wrapper = styled.section`
     border-radius: var(--radius);
     padding: 1.5rem 3rem;
   }
-  h4,
-  h5,
-  p {
-    display: grid;
-    grid-template-columns: 200px 1fr;
-  }
   p {
     text-transform: capitalize;
   }
@@ -56,9 +50,16 @@ const Wrapper = styled.section`
   }
   @media (min-width: 776px) {
     justify-content: flex-end;
+    h4,
+    h5,
+    p {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+    }
   }
   .btn {
     margin-top: 1rem;
+    margin-left: 1.1rem;
     text-align: center;
     font-weight: 700;
   }
