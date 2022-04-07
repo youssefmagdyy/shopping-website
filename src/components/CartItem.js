@@ -52,7 +52,7 @@ const Wrapper = styled.article`
   .price {
     display: none;
   }
-  display: grid;
+  display: flex;
   grid-template-columns: 200px auto auto;
   grid-template-rows: 75px;
   gap: 3rem 1rem;
@@ -61,7 +61,7 @@ const Wrapper = styled.article`
   align-items: center;
   .title {
     grid-template-rows: 75px;
-    display: grid;
+    display: flex;
     grid-template-columns: 75px 125px;
     align-items: center;
     text-align: left;
@@ -123,6 +123,7 @@ const Wrapper = styled.article`
     cursor: pointer;
   }
   @media (min-width: 776px) {
+    display: grid;
     .subtotal {
       display: block;
       margin-bottom: 0;

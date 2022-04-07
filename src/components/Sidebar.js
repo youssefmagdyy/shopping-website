@@ -44,7 +44,7 @@ const SidebarContainer = styled.div`
 
   h4 
   {
-    margin-top: 1.2rem;
+    margin-top: 1rem;
     font-family: Lucida Handwriting, cursive;
     color: var(--clr-primary-5);
   }
