@@ -59,7 +59,6 @@ const Wrapper = styled.section`
   }
   .btn {
     margin-top: 1rem;
-    margin-left: 1.1rem;
     text-align: center;
     font-weight: 700;
   }
