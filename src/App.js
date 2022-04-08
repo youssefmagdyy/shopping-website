@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { Navbar, Sidebar, Footer } from './components'
 import {Home, Products, Cart, About, PrivateRoute, Error, Checkout,SingleProduct} from './pages'
 
@@ -8,28 +8,24 @@ function App() {
     <Router>
       <Navbar/>
       <Sidebar/>
-      <Switch>
-        <Route exact path='/'>
-          <Home/>
+      <Routes>
+        <Route path='/' element ={<Home/>}>
         </Route>
-        <Route exact path='/about'>
-          <About/>
+        <Route path='/about' element ={<About/>}>
         </Route>
-        <Route exact path='/cart'>
-          <Cart/>
+        <Route path='/cart' element ={<Cart/>}>
         </Route>
-        <Route exact path='/products'>
-          <Products/>
+        <Route path='/products' element ={<Products/>}>
         </Route>
-        <Route exact path='/products/:id' children={<SingleProduct/>}>
+        <Route path='/products/:id' element ={<SingleProduct/>}>
         </Route>
-        <Route exact path='/checkout'>
-          <Checkout/>
+        <Route path='/checkout' element ={
+            <Checkout/>
+        }>
         </Route>
-        <Route path='*'>
-          <Error/>
+        <Route path='*' element={<Error/>}>
         </Route>
-      </Switch>
+      </Routes>
       <Footer/>
     </Router>
    
