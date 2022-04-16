@@ -13,9 +13,11 @@ const Product = ({image,name,id,price}) => {
       </Link>
     </div>
     <footer>
+      <Link to={`/products/${id}`} style={{color:'black'}}>
       <h5>
         {name}
       </h5>
+      </Link>
       <p>{formatPrice(price)}</p>
     </footer>
   </Wrapper>
@@ -26,6 +28,13 @@ const Wrapper = styled.article`
     position: relative;
     background: var(--clr-black);
     border-radius: var(--radius);
+  }
+  :hover {
+    h5 {
+      text-decoration: underline;
+    cursor:pointer;
+    }
+  }
   }
   img {
     width: 100%;
